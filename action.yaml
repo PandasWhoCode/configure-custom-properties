@@ -28,7 +28,7 @@ runs:
         CUSTOM_PROPS_FILE: ${{ inputs.config-file }}
         ORGANIZATION: ${{ inputs.organization }}
       run: |
-        if [ -z "GITHUB_AUTH_TOKEN" ]; then
+        if [ -z "$GITHUB_AUTH_TOKEN" ]; then
           echo "Error: GH_TOKEN is not set."
           exit 1
         fi
