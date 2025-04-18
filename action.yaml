@@ -24,7 +24,7 @@ runs:
     - name: Set Organization Custom Properties
       shell: bash
       env:
-        GH_TOKEN: ${{ inputs.token }}
+        GITHUB_AUTH_TOKEN: ${{ inputs.token }}
         CUSTOM_PROPS_FILE: ${{ inputs.config-file }}
         ORGANIZATION: ${{ inputs.organization }}
       run: |
@@ -38,6 +38,5 @@ runs:
           exit 1
         fi
         
-        gh auth login --with-token <<< "${GH_TOKEN}"
-
+        export GH_TOKEN=${GITHUB_AUTH_TOKEN}
         gh api -X PATCH /orgs/${ORGANIZATION}/properties/schema --input ${CUSTOM_PROPS_FILE} --silent
