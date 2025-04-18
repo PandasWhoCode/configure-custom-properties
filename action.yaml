@@ -14,6 +14,9 @@ inputs:
     description: 'Path to the config file'
     required: true
     default: 'custom_props.json'
+  organization:
+    description: 'Github Organization'
+    required: true
 
 runs:
   using: 'composite'
@@ -23,6 +26,7 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.token }}
         CUSTOM_PROPS_FILE: ${{ inputs.config-file }}
+        ORGANIZATION: ${{ inputs.organization }}
       run: |
         if [ -z "$GH_TOKEN" ]; then
           echo "Error: GH_TOKEN is not set."
@@ -34,4 +38,4 @@ runs:
           exit 1
         fi
 
-        gh api -X PATCH /orgs/${GITHUB_REPOSITORY_OWNER}/properties/schema --input ${CUSTOM_PROPS_FILE} --silent
+        gh api -X PATCH /orgs/${ORGANIZATION}/properties/schema --input ${CUSTOM_PROPS_FILE} --silent
