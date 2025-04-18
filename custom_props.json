@@ -1,0 +1,186 @@
+{
+  "properties": [
+    {
+      "property_name": "initial-ci-review-by-team",
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed initial CI review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-config-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed initial config review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-oss-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed initial OSS review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-security-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed initial security review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-ci-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed latest CI review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-config-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed latest config review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-oss-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed latest OSS review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-security-review-by-team",
+
+      "value_type": "single_select",
+      "allowed_values": [
+        "platform-ci",
+        "release-engineering",
+        "security",
+        "devops"
+      ],
+      "description": "Team which performed latest security review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-date-modified",
+
+      "value_type": "string",
+      "description": "Date of last modification",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-ci-review-date",
+
+      "value_type": "string",
+      "description": "Date of initial CI review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-config-review-date",
+
+      "value_type": "string",
+      "description": "Date of initial configuration review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-oss-review-date",
+
+      "value_type": "string",
+      "description": "Date of initial OSS review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "initial-security-review-date",
+
+      "value_type": "string",
+      "description": "Date of initial security review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-ci-review-date",
+
+      "value_type": "string",
+      "description": "Date of latest CI review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-config-review-date",
+
+      "value_type": "string",
+      "description": "Date of latest configuration review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-oss-review-date",
+
+      "value_type": "string",
+      "description": "Date of latest OSS review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    },
+    {
+      "property_name": "last-security-review-date",
+      "value_type": "string",
+      "description": "Date of latest security review",
+      "values_editable_by": "org_and_repo_actors",
+      "required": false
+    }
+  ]
+}

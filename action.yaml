@@ -1,0 +1,37 @@
+name: 'Set Custom Properties Schema Action'
+description: 'This action sets up the custom properties for the Github Organization.'
+author: 'Roger Barker <roger@pandaswhocode.com>'
+organization: 'PandasWhoCode'
+branding:
+  icon: 'arrow-up-circle'
+  color: 'purple'
+
+inputs:
+  token:
+    description: 'Github Personal AccessToken'
+    required: true
+  config-file:
+    description: 'Path to the config file'
+    required: true
+    default: 'custom_props.json'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set Organization Custom Properties
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        CUSTOM_PROPS_FILE: ${{ inputs.config-file }}
+      run: |
+        if [ -z "$GH_TOKEN" ]; then
+          echo "Error: GH_TOKEN is not set."
+          exit 1
+        fi
+
+        if [ ! -f "$CUSTOM_PROPS_FILE" ]; then
+          echo "Error: Custom properties file '${CUSTOM_PROPS_FILE}' does not exist."
+          exit 1
+        fi
+
+        gh api -X PATCH /orgs/${GITHUB_REPOSITORY_OWNER}/properties/schema --input ${CUSTOM_PROPS_FILE} --silent
