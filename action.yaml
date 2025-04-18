@@ -37,5 +37,7 @@ runs:
           echo "Error: Custom properties file '${CUSTOM_PROPS_FILE}' does not exist."
           exit 1
         fi
+        
+        gh auth login --with-token <<< "${GH_TOKEN}"
 
         gh api -X PATCH /orgs/${ORGANIZATION}/properties/schema --input ${CUSTOM_PROPS_FILE} --silent
