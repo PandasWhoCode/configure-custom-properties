@@ -21,12 +21,14 @@ To run the action within your github CI/CD pipeline you will need to create a
 fine-grained token with the following permissions:
 
 ### Organization Permissions
-- Read and Write access to organization administration
+
 - Read, Write, and Admin access to organization custom properties
 
-### Repository Permissions
-- Read access to metadata
-- Read and Write access to code and repository custom properties
+### Additional Information
+
+- [Create or update a custom property for an organization](https://docs.github.com/en/rest/orgs/custom-properties?apiVersion=2022-11-28#create-or-update-a-custom-property-for-an-organization)
+- [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+- The owner of the fine-grained token must have full administrative rights to the organization.
 
 ---
 
@@ -52,16 +54,16 @@ jobs:
         with:
           token: ${{ secrets.GH_ORG_ADMIN_TOKEN }}
           config-file: .github/custom_props.json
+          organization: ${{ github.organization }}
 ```
 
 ---
 
 ## Example custom_props.json
 
+`custom_props.json`:
+
 ```json
-
-// custom_props.json
-
 {
   "properties": [
     {
