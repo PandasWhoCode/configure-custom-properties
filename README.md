@@ -59,7 +59,7 @@ jobs:
 
 ---
 
-## Example custom_props.json
+## Example `.github/custom_props.json`
 
 `custom_props.json`:
 
@@ -109,6 +109,8 @@ jobs:
   ]
 }
 ```
+
+For help generating your `custom-props.json` file see the documentation for our tool [generate-custom-properties](https://github.com/PandasWhoCode/generate-custom-properties-schema).
 
 ## 👤 Author
 
